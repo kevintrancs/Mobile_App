@@ -1,4 +1,4 @@
-public class Car implements Driveable {
+public class Car implements Driveable, Comparable<Car>{
 
 	String make;
 	String model;
@@ -53,6 +53,16 @@ public class Car implements Driveable {
 	
 	public int getYear(){
 		return this.year;
+	}
+
+	@Override
+	public int compareTo(Car o) {
+		if(this.odometerReading == o.odometerReading)  
+			return 0;  
+		else if(this.odometerReading > o.odometerReading)  
+			return 1;  
+		else  
+			return -1;  
 	}
 
 }

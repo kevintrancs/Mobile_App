@@ -52,7 +52,7 @@ public class Drive {
 	
 	/**
 	 * 
-	 * Insertion sort, simple sort...
+	 * Insertion sort, simple sort... didn't need to use compare if I can check from my sort.
 	 * @param list
 	 */
 	
