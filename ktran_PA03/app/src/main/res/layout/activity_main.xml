@@ -19,6 +19,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/amount"
+            android:textColor="@color/colorPrimaryDark"
             android:textSize="18sp" />
 
         <EditText
@@ -43,6 +44,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/tip_percent"
+            android:textColor="@color/colorPrimaryDark"
             android:textSize="18sp" />
 
         <EditText
@@ -72,6 +74,7 @@
             android:onClick="calulcate_tip"
             android:padding="16dp"
             android:text="@string/buttom"
+            android:textColor="@color/colorPrimary"
             android:textSize="18sp" />
     </LinearLayout>
 
@@ -87,6 +90,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/tip_amount"
+            android:textColor="@color/colorPrimaryDark"
             android:textSize="18sp" />
     </LinearLayout>
 
@@ -102,6 +106,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/total_amount"
+            android:textColor="@color/colorPrimaryDark"
             android:textSize="18sp" />
     </LinearLayout>
 
