@@ -1,3 +1,11 @@
+/**
+ * Tip Calculator
+ *  PA03
+ *
+ * @author Kevin Tran
+ * @version v1.0
+ */
+
 package com.example.ktran.ktran_pa03;
 
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +16,14 @@ import android.widget.TextView;
 
 import java.text.DecimalFormat;
 
+/**
+ * Class Name: MainActivity
+ *
+ *
+ * Methods:
+ *  calulcate_tip: calculates tip and sets
+ */
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -17,16 +33,21 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Calculates tip
+     *
+     * @param v:  View
+     */
+
     public void calulcate_tip(View v){
         DecimalFormat df = new DecimalFormat();
         df.setMaximumFractionDigits(2);
-
 
         EditText init_bill = (EditText) findViewById(R.id.init_amt);
         EditText init_tip = (EditText) findViewById(R.id.init_tip);
 
         double bill = Double.parseDouble(init_bill.getText().toString());
-        double tip = Double.parseDouble(init_tip.getText().toString());
+        int tip = Integer.valueOf(init_tip.getText().toString());
 
 
         TipCalculator tc = new TipCalculator(bill, tip);

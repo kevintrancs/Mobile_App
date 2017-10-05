@@ -53,7 +53,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Enter the tip here"
-            android:inputType="numberDecimal" />
+            android:inputType="number" />
 
 
     </LinearLayout>
@@ -73,7 +73,7 @@
             android:background="@color/colorAccent"
             android:onClick="calulcate_tip"
             android:padding="16dp"
-            android:text="@string/buttom"
+            android:text="@string/c_button"
             android:textColor="@color/colorPrimary"
             android:textSize="18sp" />
     </LinearLayout>
