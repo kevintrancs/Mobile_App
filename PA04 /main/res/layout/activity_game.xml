@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/game"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:columnCount="3"
+    android:rowCount="5"
+    android:orientation="horizontal">
+
+
+
+    <ImageButton
+        android:id="@+id/r0c0"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_row="0"
+        android:layout_column="0"
+        android:layout_gravity="fill_horizontal"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:onClick="onClickSquare"
+        />
+
+    <ImageButton
+        android:id="@+id/r0c1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_row="0"
+        android:layout_column="1"
+        android:layout_gravity="fill_horizontal"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:onClick="onClickSquare"
+        />
+
+    <ImageButton
+        android:id="@+id/r0c2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_row="0"
+        android:layout_column="2"
+        android:layout_gravity="fill_horizontal"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:onClick="onClickSquare"
+        />
+
+
+
+    <ImageButton
+        android:id="@+id/r1c0"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_row="1"
+        android:layout_column="0"
+        android:layout_gravity="fill_horizontal"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:onClick="onClickSquare"
+        />
+
+    <ImageButton
+        android:id="@+id/r1c1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_row="1"
+        android:layout_column="1"
+        android:layout_gravity="fill_horizontal"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:onClick="onClickSquare"
+        />
+
+    <ImageButton
+        android:id="@+id/r1c2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_row="1"
+        android:layout_column="2"
+        android:layout_gravity="fill_horizontal"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:onClick="onClickSquare"
+
+        />
+
+
+
+
+    <ImageButton
+        android:id="@+id/r2c0"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_row="2"
+        android:layout_column="0"
+        android:layout_gravity="fill_horizontal"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:onClick="onClickSquare"
+        />
+
+    <ImageButton
+        android:id="@+id/r2c1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_row="2"
+        android:layout_column="1"
+        android:layout_gravity="fill_horizontal"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:onClick="onClickSquare"
+        />
+
+    <ImageButton
+        android:id="@+id/r2c2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_row="2"
+        android:layout_column="2"
+        android:layout_gravity="fill_horizontal"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:onClick="onClickSquare"
+        />
+
+
+
+    <ImageView
+        android:id="@+id/player_icon"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_row="3"
+        android:layout_column="0"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:src="@drawable/tongue"
+        />
+
+    <TextView
+        android:id="@+id/player_name"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_column="1"
+        android:layout_columnWeight="1"
+        android:layout_row="3"
+        android:layout_rowWeight="1"
+        android:fontFamily="monospace"
+        android:text="Player 1's turn"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+
+
+    <Button
+        android:text="Quit"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_row="4"
+        android:layout_column="2"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight=".5"
+        android:onClick="onQuit"
+        />
+
+    <Button
+        android:id="@+id/again"
+        android:text="Play Again?"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_row="4"
+        android:layout_column="0"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight=".5"
+        android:layout_gravity="fill_horizontal"
+        android:layout_columnSpan="2"
+        android:visibility="invisible"
+        android:onClick="onAgain"
+        />
+
+
+
+
+</GridLayout>

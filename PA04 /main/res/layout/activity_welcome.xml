@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:columnCount="2"
+    android:rowCount="5"
+    tools:context="com.example.ktran.pa04.WelcomeActivity">
+
+    <TextView
+        android:id="@+id/tutorial"
+        android:layout_width="match_parent"
+        android:layout_column="0"
+        android:layout_columnSpan="2"
+        android:layout_row="0"
+        android:fontFamily="monospace"
+        android:padding="16dp"
+        android:text="@string/intro"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="18sp" />
+
+    <TextView
+        android:layout_column="0"
+        android:layout_row="1"
+        android:fontFamily="monospace"
+        android:text="Player 1 name:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/p1_name"
+        android:layout_column="1"
+        android:layout_gravity="fill_horizontal"
+        android:layout_row="1"
+        android:hint=" Enter your name Player 1" />
+
+
+    <TextView
+        android:layout_column="0"
+        android:layout_row="2"
+        android:fontFamily="monospace"
+        android:text="Player 2 name:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/p2_name"
+        android:layout_column="1"
+        android:layout_gravity="fill_horizontal"
+        android:layout_row="2"
+        android:hint="Enter your name player 2" />
+
+
+    <Button
+        android:id="@+id/play_btn"
+        android:layout_column="0"
+        android:layout_columnSpan="2"
+        android:layout_gravity="center_horizontal"
+        android:layout_row="3"
+        android:onClick="onClick"
+        android:padding="20dp"
+        android:text="Play!"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_column="0"
+        android:layout_row="4"
+        android:fontFamily="monospace"
+        android:text=""
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="14sp" />
+
+
+</GridLayout>
+
+
+
