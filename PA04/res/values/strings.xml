@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Tic Tac Toe</string>
+    <string name="title_activity_game">Tic Tac Toe</string>
+    <string name="intro">Welcome to tic tac toe. There are 2 players, try to get 3 in a row, each player takes
+    turns alternating to pick a open square. </string>
+
+
+</resources>
