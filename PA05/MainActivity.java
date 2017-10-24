@@ -1,3 +1,13 @@
+
+/**
+ * Note Taker
+ *  PA05
+ *
+ * @author Kevin Tran
+ * @version v1.0
+ */
+
+
 package com.example.ktran.pa05;
 
 import android.app.Activity;
@@ -22,6 +32,16 @@ import java.util.ArrayList;
 
 import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
 
+/**
+ * Class Name: MainActivity
+ *
+ *
+ * Methods:
+ *  checkUnique: Checks if the name is unique
+ *  onActivityResult: returns the values from NoteActivity
+ *  onClick:
+ *
+ */
 public class MainActivity extends AppCompatActivity {
 
     private ArrayList<Note> items = new ArrayList<>();
@@ -49,7 +69,6 @@ public class MainActivity extends AppCompatActivity {
                 GridLayout.LayoutParams.MATCH_PARENT;
 
         new_note_btn.setLayoutParams(buttonLayoutParams);
-
 
         GridLayout.LayoutParams lvLayoutParams =
                 new GridLayout.LayoutParams();
@@ -86,12 +105,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onItemLongClick(AdapterView<?> arg0, View arg1,
                                            int pos, long id) {
-
                final int p = pos;
                 AlertDialog.Builder builder1 = new AlertDialog.Builder(MainActivity.this);
                 builder1.setTitle("Delete A Note");
                 builder1.setMessage("Are you sure you want to delete this note?");
                 builder1.setCancelable(true);
+
                 builder1.setPositiveButton(
                         "Yes",
                         new DialogInterface.OnClickListener() {
@@ -110,6 +129,16 @@ public class MainActivity extends AppCompatActivity {
                             }
                         });
 
+                builder1.setNeutralButton(
+                        "EXTRA CREDIT",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                Intent intent = new Intent(Intent.ACTION_SEND);
+                                intent.setType("text/plain");
+                                intent.putExtra(Intent.EXTRA_TEXT, items.get(p).getContent());
+                                startActivity(intent);
+                            }
+                        });
                 AlertDialog alert11 = builder1.create();
                 alert11.show();
                 return true;
@@ -118,13 +147,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(gridLayout);
     }
 
-    public void populate_note(){
-        this.items.add(new Note("Test1", "something", "shit"));
-        this.items.add(new Note("Test2", "something", "shit"));
-        this.items.add(new Note("Test3", "something", "shit"));
-        this.items.add(new Note("Test4", "something", "shit"));
-
-    }
+    /**
+     * Class_name: ButtonClickListener
+     * method_name: onClick
+     *  Creates new intent to Note
+     *  Returns  data
+     *
+     * @param View:  view
+     */
 
     private class ButtonClickListener
             implements View.OnClickListener {
@@ -141,6 +171,13 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * method_name: onActivityResult
+     *  Gets data from NoteActivity from intent and gets strings
+     *  Returns data and processes it into our note
+     *
+     * @param int requestCode, int resultCode, Intent data
+     */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == CREATE_NOTE) {
@@ -148,10 +185,16 @@ public class MainActivity extends AppCompatActivity {
                 String title = data.getStringExtra("title");
                 String type = data.getStringExtra("type");
                 String content = data.getStringExtra("content");
-
                 Note n = new Note(title, type, content);
-                this.items.add(n);
-                itemsAdapter.notifyDataSetChanged();
+
+                if(checkUnique(title)) {
+                    this.items.add(n);
+                    itemsAdapter.notifyDataSetChanged();
+                }
+                else{
+                    Toast.makeText(getApplicationContext(), "Sorry, this is already on your to-do list.",
+                            Toast.LENGTH_SHORT).show();
+                }
             }
         }
 
@@ -162,10 +205,33 @@ public class MainActivity extends AppCompatActivity {
                 String content = data.getStringExtra("content");
                 int pos = data.getIntExtra("position", 0);
                 Note n = new Note(title, type, content);
-                items.set(pos, n);
-                itemsAdapter.notifyDataSetChanged();
+
+                if(checkUnique(title)) {
+                    items.set(pos, n);
+                    itemsAdapter.notifyDataSetChanged();
+                }
+                else{
+                    Toast.makeText(getApplicationContext(), "Sorry, this is already on your to-do list.",
+                            Toast.LENGTH_SHORT).show();
+                }
             }
 
         }
+    }
+
+
+    /**
+     * method_name: checkUnique
+     *  Checks if the String is not in it already
+     *  Returns true if not
+     *
+     * @param String s
+     */
+    public boolean checkUnique(String s){
+        for(Note n : items){
+            if(n.getTitle().equals(s))
+                return false;
+        }
+        return true;
     }
 }

@@ -11,10 +11,19 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.GridLayout;
 import android.widget.Spinner;
+import android.widget.Toast;
 
+
+/**
+ * Class Name: NoteActivity
+ *
+ * Takes intent and gets data sent
+ * Then once button DONE is pressed return back to the other activity.
+ *
+ */
 public class NoteActivity extends AppCompatActivity {
 
-    String list[] = {"School", "Personal", "Business"};
+    String list[] = {"School", "Personal", "Business", "Other"};
     EditText title;
     EditText content;
     Spinner choice;
@@ -47,6 +56,8 @@ public class NoteActivity extends AppCompatActivity {
                 choice.setSelection(1);
             if(intent.getStringExtra("type").equals(list[2]))
                 choice.setSelection(2);
+            if(intent.getStringExtra("type").equals(list[3]))
+                choice.setSelection(3);
         }
 
         GridLayout gridLayout = new GridLayout(this);
@@ -93,7 +104,6 @@ public class NoteActivity extends AppCompatActivity {
         content.setLayoutParams(content_params);
         gridLayout.addView(content);
 
-
         GridLayout.Spec rowSpec4 = GridLayout.spec(3);
         GridLayout.Spec columnSpec4 =GridLayout.spec(0,2);
         GridLayout.LayoutParams button_params = new GridLayout.LayoutParams(rowSpec4, columnSpec4);
@@ -103,21 +113,24 @@ public class NoteActivity extends AppCompatActivity {
         gridLayout.addView(done_btn);
 
         setContentView(gridLayout);
-
-
         done_btn.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
 
                 Intent returnIntent = new Intent();
-
-                String s = choice.getSelectedItem().toString();
-                returnIntent.putExtra("title", title.getText().toString());
-                returnIntent.putExtra("type", s);
-                returnIntent.putExtra("content", content.getText().toString());
-                returnIntent.putExtra("position", pos);
-                setResult(Activity.RESULT_OK, returnIntent);
-                finish();
+                if(!title.getText().toString().isEmpty()) {
+                    String s = choice.getSelectedItem().toString();
+                    returnIntent.putExtra("title", title.getText().toString());
+                    returnIntent.putExtra("type", s);
+                    returnIntent.putExtra("content", content.getText().toString());
+                    returnIntent.putExtra("position", pos);
+                    setResult(Activity.RESULT_OK, returnIntent);
+                    finish();
+                }
+                else{
+                    Toast.makeText(getApplicationContext(), "Please enter a title.",
+                            Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }

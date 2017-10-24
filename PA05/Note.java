@@ -1,9 +1,15 @@
 package com.example.ktran.pa05;
 
-/**
- * Created by ktran on 10/23/17.
- */
 
+/**
+ * Class Name: Note
+ *
+ *
+ * Methods:
+ *  toString: Get string
+ *  Setters/Getters
+ *
+ */
 public class Note {
 
     String title;
@@ -17,18 +23,60 @@ public class Note {
 
     }
 
+    /**
+     * method_name: toString
+     *
+     * @return: String
+     */
     @Override
     public String toString() {
         return this.title;
     }
 
+    /**
+     * method_name: getTitle
+     *
+     * @return: String
+     */
     public String getTitle(){
         return this.title;
     }
+    /**
+     * method_name: getType
+     *
+     * @return: String
+     */
     public String getType(){
         return this.type;
     }
+    /**
+     * method_name: getContent
+     *
+     * @return: String
+     */
     public String getContent(){
         return this.content;
+    }
+
+    /**
+     * method_name: setTitle
+     *
+     */
+    public void setTitle(String s){
+        this.title = s;
+    }
+    /**
+     * method_name: setContent
+     *
+     */
+    public void setContent(String s){
+        this.content = s;
+    }
+    /**
+     * method_name: setType
+     *
+     */
+    public void setType(String s){
+        this.type = s;
     }
 }
