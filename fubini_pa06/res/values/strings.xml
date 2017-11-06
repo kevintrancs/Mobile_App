@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Bulldog</string>
+    <string name="title_activity_food_menu">Select Item</string>
+    <string name="title_activity_pizza">Custom Pizza</string>
+</resources>

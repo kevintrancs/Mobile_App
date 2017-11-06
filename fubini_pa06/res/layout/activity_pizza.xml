@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:columnCount="1">
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:columnCount="3"
+        >
+
+        <!--START
+        TEXT + CHECKBOX
+          -->
+
+        <TextView
+           android:id="@+id/shroom_cost"
+           android:layout_row="4"
+           android:layout_column="2"
+           android:layout_gravity="right"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:ems="10"
+           android:text="0.00" />
+
+       <TextView
+           android:id="@+id/pepperoni_cost"
+           android:layout_row="5"
+           android:layout_column="2"
+           android:layout_gravity="right"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:ems="10"
+           android:text="0.00" />
+
+       <TextView
+           android:id="@+id/fish_cost"
+           android:layout_row="6"
+           android:layout_column="2"
+           android:layout_gravity="right"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:ems="10"
+           android:text="0.00" />
+
+       <CheckBox
+           android:id="@+id/shrooms"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_row="4"
+           android:layout_column="0"
+           android:onClick="checkboxClicked"
+           android:layout_columnSpan="2"
+           android:text="Mushrooms" />
+       <CheckBox
+           android:id="@+id/pepperoni"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_row="5"
+           android:layout_column="0"
+           android:layout_columnSpan="2"
+           android:onClick="checkboxClicked"
+           android:text="Pepperoni" />
+       <CheckBox
+           android:id="@+id/fish"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_row="6"
+           android:layout_column="0"
+           android:layout_columnSpan="2"
+           android:onClick="checkboxClicked"
+           android:text="Fish" />
+        <!-- END
+      TEXT + CHECKBOX
+        -->
+
+
+        <!-- Start
+          RADIO BUTTON
+        -->
+        <RadioGroup
+            android:id="@+id/classStandingRadioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+
+            <RadioButton
+                android:id="@+id/thin_crust"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_row="7"
+                android:text="Thin Crust"
+                android:checked="false"
+                android:onClick="radiobuttonClicked"
+                />
+
+            <RadioButton
+                android:id="@+id/thicc_crust"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_row="7"
+                android:text="Thicc Crust"
+                android:checked="false"
+                android:onClick="radiobuttonClicked"
+                />
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/crust_cost"
+            android:layout_row="7"
+            android:layout_column="2"
+            android:layout_gravity="right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:text="0.00" />
+        <!-- END
+         RADIO BUTTONS
+       -->
+
+        <!-- START
+                SWITCH GLUTTEN
+              -->
+
+        <Switch
+            android:id="@+id/glutten"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="8"
+            android:layout_column="0"
+            android:onClick="switchButtonClicked"
+            android:text="Glutten Free" />
+
+        <TextView
+            android:id="@+id/glutten_cost"
+            android:layout_row="8"
+            android:layout_column="2"
+            android:layout_gravity="right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:text="0.00" />
+
+        <!-- END
+            SWITCH GLUTTEN
+          -->
+
+
+        <!-- START
+           BAR
+          -->
+        <SeekBar
+            android:id="@+id/cheese_bar"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_row="9"
+            android:layout_column="1"
+            android:max="100"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:id="@+id/cheese_cost"
+            android:layout_row="9"
+            android:layout_column="2"
+            android:layout_gravity="right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:text="0.00" />
+
+
+        <TextView
+            android:id="@+id/chese"
+            android:layout_row="9"
+            android:layout_column="0"
+            android:layout_gravity="right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:text="Cheese" />
+        <!-- END
+           BAR
+          -->
+
+        <!-- START
+           Total Cost
+          -->
+
+        <TextView
+            android:id="@+id/tc"
+            android:layout_row="10"
+            android:layout_column="0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="2"
+            android:ems="10"
+            android:text="Total Cost" />
+
+        <TextView
+            android:id="@+id/total_cost"
+            android:layout_row="10"
+            android:layout_column="2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:ems="10"
+            android:text="6.88" />
+
+
+        <!-- START
+          Total Cost
+         -->
+       <ImageView
+           android:layout_column="0"
+           android:layout_columnSpan="3"
+           android:layout_row="0"
+           android:layout_rowSpan="3"
+           android:scaleType="center"
+           android:src="@drawable/nasty_pizza"
+           android:layout_height="match_parent" />
+
+
+   </GridLayout>
+
+
+
+</ScrollView>

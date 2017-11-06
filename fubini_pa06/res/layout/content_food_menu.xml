@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:columnCount="2"
+    android:rowCount="4"
+    >
+
+    <ImageButton
+        android:id="@+id/pizza"
+        android:layout_width="195dp"
+        android:layout_height="210dp"
+        android:layout_column="0"
+        android:layout_row="0"
+        android:scaleType="centerCrop"
+        android:onClick="onClickBtn"
+        android:src="@drawable/nasty_pizza" />
+
+    <ImageButton
+        android:id="@+id/salad"
+        android:layout_width="195dp"
+        android:layout_height="210dp"
+        android:layout_column="1"
+        android:layout_row="0"
+        android:scaleType="centerCrop"
+        android:src="@drawable/healthy_salad"
+        android:onClick="onClickBtn"
+        />
+
+    <TextView
+        android:layout_column="0"
+        android:layout_row="1"
+        android:fontFamily="casual"
+        android:text="Homemade Pizza $6.88"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="18sp"
+        android:layout_height="wrap_content"
+        />
+
+    <TextView
+        android:layout_column="1"
+        android:layout_row="1"
+        android:fontFamily="casual"
+        android:text="Healthy Salad $5.99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="18sp"
+        android:layout_height="wrap_content" />
+
+
+    <ImageButton
+        android:id="@+id/raw_egg"
+        android:layout_width="195dp"
+        android:layout_height="210dp"
+        android:layout_column="0"
+        android:layout_row="2"
+        android:scaleType="centerCrop"
+        android:src="@drawable/raw_egg"
+        android:onClick="onClickBtn"
+        />
+
+    <ImageButton
+        android:id="@+id/water"
+        android:layout_width="195dp"
+        android:layout_height="210dp"
+        android:layout_column="1"
+        android:layout_row="2"
+        android:scaleType="centerCrop"
+        android:src="@drawable/refreshing_water"
+        android:onClick="onClickBtn"
+        />
+
+    <TextView
+        android:layout_column="0"
+        android:layout_row="3"
+        android:fontFamily="casual"
+        android:text="Gourmet Egg $99.00"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="18sp"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_column="1"
+        android:layout_row="3"
+        android:fontFamily="casual"
+        android:text="God's Water $8.99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="18sp"
+        android:layout_height="wrap_content" />
+
+</GridLayout>
